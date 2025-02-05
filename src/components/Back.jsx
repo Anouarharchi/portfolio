@@ -26,7 +26,7 @@ function Back() {
       return (
         <div style={containerStyle}>
           <video style={videoStyle} autoPlay loop muted>
-            <source src={`${process.env.PUBLIC_URL}/videos/video.mp4`} type="video/mp4" />
+            <source src={`${process.env.PUBLIC_URL}/videos/blue.mp4`} type="video/mp4" />
           </video>
           
         </div>
