@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 export default function Home() {
   const [text, setText] = useState('');
@@ -7,10 +8,10 @@ export default function Home() {
   const typingSpeed = 150;       // Delay per character when typing
   const deletingSpeed = 100;     // Delay per character when deleting
   const pauseAfterTyping = 1000; // Pause after full word is typed
-  const pauseAfterDeleting = 500; // Pause before restarting the effect
+  const pauseAfterDeleting = 1500; // Pause before restarting the effect
 
   useEffect(() => {
-    const role = 'Developer';  // Only use 'Developer' as the word
+    const role = 'Developer';  // You can change this to dynamic roles if needed
 
     let timer;
 
@@ -40,32 +41,36 @@ export default function Home() {
   }, [text, isDeleting]);
 
   return (
-    <div style={{ padding: '50px', color: '#fff', fontFamily: 'Courier New, Courier, monospace', marginTop: '100px' }}>
-      {/* Heading with typing effect */}
-      <h1 style={{ fontSize: '3rem' }}>
-        I am a <span className="typing-effect" style={{ fontSize: '3rem', color: '#007bff', verticalAlign: 'middle' }}>{text}</span>
+    <div className="container text-center my-5">
+      <h1 className="display-4 text-white">
+        I am a <span className="role-text">{text}</span>
       </h1>
 
-      {/* Resume Section */}
-      <p style={{ fontSize: '1.5rem', marginTop: '20px' }}>
-        I'm a passionate Developer with experience in building full-stack web applications. 
+      <p className="lead mt-4 text-white">
+        I'm a passionate Developer with experience in building full-stack web applications.
         I specialize in creating efficient, user-friendly solutions using the latest technologies.
       </p>
 
-      {/* Buttons Section */}
-      <div style={{ marginTop: '30px' }}>
-        <button className="btn btn-primary" style={{ marginRight: '1rem' }}>
-          Contact Me
-        </button>
-        <button className="btn btn-secondary">
-          View My Work
-        </button>
+      <div className="mt-5">
+        <a href="https://github.com/Anouarharchi" target="_blank" rel="noopener noreferrer">
+          <button className="btn btn-primary btn-lg mx-3" aria-label="View My Work">
+            View My Work
+          </button>
+        </a>
+        <a href="/contact">
+          <button className="btn btn-secondary btn-lg" aria-label="Contact Me">
+            Contact Me
+          </button>
+        </a>
       </div>
 
-      {/* Inline CSS for typing effect, blinking cursor, and button styling */}
+      {/* Inline CSS for the typing effect */}
       <style>
         {`
-          .typing-effect {
+          .role-text {
+            font-size: 3rem;
+            color: #007bff;
+            vertical-align: middle;
             border-right: 3px solid #fff;
             white-space: nowrap;
             overflow: hidden;
@@ -75,30 +80,6 @@ export default function Home() {
 
           @keyframes blink {
             50% { border-color: transparent; }
-          }
-
-          .btn {
-            font-size: 1rem;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            border: none;
-          }
-          .btn-primary {
-            background-color: #007bff;
-            color: #fff;
-            transition: background-color 0.3s ease;
-          }
-          .btn-primary:hover {
-            background-color: #0056b3;
-          }
-          .btn-secondary {
-            background-color: #6c757d;
-            color: #fff;
-            transition: background-color 0.3s ease;
-          }
-          .btn-secondary:hover {
-            background-color: #5a6268;
           }
         `}
       </style>

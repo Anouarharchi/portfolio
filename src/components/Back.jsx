@@ -10,7 +10,7 @@ function Back() {
         overflow: 'hidden',
         zIndex: -1, // Send it behind all content
       };
-      
+
       const videoStyle = {
         position: 'absolute',
         top: 0,
@@ -20,7 +20,7 @@ function Back() {
         objectFit: 'cover',
         zIndex: -1, // Keep it behind everything
       };
-      
+
     
     
       return (
@@ -28,10 +28,10 @@ function Back() {
           <video style={videoStyle} autoPlay loop muted>
             <source src={`${process.env.PUBLIC_URL}/videos/blue.mp4`} type="video/mp4" />
           </video>
-          
+
+          {/* Add your image here */}
         </div>
       );
-    }
-    
+}
 
-export default Back
+export default Back;
