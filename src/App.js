@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Reviews from './components/Reviews'; 
 import Back from './components/Back';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -104,7 +104,7 @@ export default function App() {
               </li>
               <li className="nav-item ms-4">
                 <NavLink
-                  to="/footer"
+                  to="/reviews"  
                   className="nav-link fs-4"
                   style={({ isActive }) => ({
                     color: isActive ? '#00bcd4' : '#ffffff',
@@ -112,7 +112,7 @@ export default function App() {
                     textShadow: isActive ? '0 0 10px #00bcd4' : 'none',
                   })}
                 >
-                  Footer
+                  Reviews
                 </NavLink>
               </li>
             </ul>
@@ -124,7 +124,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/footer" element={<Footer />} />
+          <Route path="/reviews" element={<Reviews />} />  {/* تم تغيير Footer إلى Reviews */}
         </Routes>
       </div>
 
