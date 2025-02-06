@@ -57,7 +57,7 @@ export default function Home() {
             View My Work
           </button>
         </a>
-        <a href="/contact">
+        <a href="/portfolio/contact">
           <button className="btn btn-secondary btn-lg" aria-label="Contact Me">
             Contact Me
           </button>
