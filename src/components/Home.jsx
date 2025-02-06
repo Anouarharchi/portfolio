@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 export default function Home() {
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const navigate = useNavigate(); // ✅ Correct way to navigate
 
   const typingSpeed = 150;       // Delay per character when typing
   const deletingSpeed = 100;     // Delay per character when deleting
@@ -57,11 +59,13 @@ export default function Home() {
             View My Work
           </button>
         </a>
-        <a href="/contact">
-          <button className="btn btn-secondary btn-lg" aria-label="Contact Me">
-            Contact Me
-          </button>
-        </a>
+        <button 
+          className="btn btn-secondary btn-lg" 
+          aria-label="Contact Me"
+          onClick={() => navigate('/contact')} // ✅ This will navigate correctly
+        >
+          Contact Me
+        </button>
       </div>
 
       {/* Inline CSS for the typing effect */}
